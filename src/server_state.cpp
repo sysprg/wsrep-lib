@@ -1120,6 +1120,7 @@ int wsrep::server_state::on_apply(
     const wsrep::ws_meta& ws_meta,
     const wsrep::const_buffer& data)
 {
+    if (not init_initialized_)
     {
         wsrep::unique_lock<wsrep::mutex> lock(mutex_);
         if (state_ == s_connected)
