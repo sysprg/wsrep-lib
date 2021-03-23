@@ -1,3 +1,4 @@
 [submodule "wsrep-API/v26"]
 	path = wsrep-API/v26
 	url = https://github.com/sysprg/wsrep-API
+	branch = mariadb4.x-galera-ps
