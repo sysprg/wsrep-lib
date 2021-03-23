@@ -1119,3 +1119,16 @@ void* wsrep::wsrep_provider_v26::native() const
 {
     return wsrep_;
 }
+
+enum wsrep::provider::status
+wsrep::wsrep_provider_v26::fetch_pfs_info(wsrep_node_info_t* nodes,
+                                          uint32_t* size)
+{
+    return map_return_value(wsrep_->fetch_pfs_info(wsrep_, nodes, size));
+}
+
+enum wsrep::provider::status
+wsrep::wsrep_provider_v26::fetch_pfs_stat(wsrep_node_stat_t* node)
+{
+    return map_return_value(wsrep_->fetch_pfs_stat(wsrep_, node));
+}

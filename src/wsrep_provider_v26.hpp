@@ -104,6 +104,10 @@ namespace wsrep
         std::string version() const WSREP_OVERRIDE;
         std::string vendor() const WSREP_OVERRIDE;
         void* native() const WSREP_OVERRIDE;
+        enum wsrep::provider::status
+        fetch_pfs_info(wsrep_node_info_t* nodes, uint32_t* size) WSREP_OVERRIDE;
+        enum wsrep::provider::status
+        fetch_pfs_stat(wsrep_node_stat_t* node) WSREP_OVERRIDE;
     private:
         wsrep_provider_v26(const wsrep_provider_v26&);
         wsrep_provider_v26& operator=(const wsrep_provider_v26);

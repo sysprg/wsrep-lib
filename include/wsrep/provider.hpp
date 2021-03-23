@@ -27,6 +27,8 @@
 #include "transaction_id.hpp"
 #include "compiler.hpp"
 
+#include "wsrep_api.h"
+
 #include <cassert>
 #include <cstring>
 
@@ -413,6 +415,16 @@ namespace wsrep
          * Return pointer to native provider handle.
          */
         virtual void* native() const = 0;
+
+        /**
+         * Fetch cluster information to populate cluster members table.
+         */
+        virtual enum status fetch_pfs_info(wsrep_node_info_t* nodes, uint32_t* size) = 0;
+
+        /**
+         * Fetch node information to populate node statistics table.
+         */
+        virtual enum status fetch_pfs_stat(wsrep_node_stat_t* node) = 0;
 
         /**
          * Services argument passed to make_provider. This struct contains

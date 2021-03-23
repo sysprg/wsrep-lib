@@ -299,6 +299,8 @@ namespace wsrep
         std::string version() const WSREP_OVERRIDE { return "0.0"; }
         std::string vendor() const WSREP_OVERRIDE { return "mock"; }
         void* native() const WSREP_OVERRIDE { return 0; }
+        void fetch_pfs_info(wsrep_node_info_t*, uint32_t* ) { return; }
+        void fetch_pfs_stat(wsrep_node_stat_t*) { return; }
 
         //
         // Methods to modify mock state
